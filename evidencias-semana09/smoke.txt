@@ -1,0 +1,9 @@
+﻿PASA | API disponible
+PASA | Control docente protegido
+PASA | Dataset de prueba aislado
+PASA | Cat├ílogo disponible
+PASA | Compra y precio calculados por API
+PASA | Reintento sin duplicar pedido
+PASA | Pedido consultable
+PASA | Inventario y persistencia coherentes
+Smoke: 8/8. Esto no equivale a aprobar Semana 9.

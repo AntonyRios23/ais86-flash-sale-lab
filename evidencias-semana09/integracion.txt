@@ -1,0 +1,173 @@
+﻿docker :  Image ais86-flash-test-tests Building 
+En línea: 1 Carácter: 1
++ docker compose -p ais86-flash-test -f compose.test.local.yaml up --bu ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Image ais86-flash-test-tests Building :String) [], R 
+   emoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+#1 [internal] load local bake definitions
+#1 reading from stdin 609B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 556B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 1.1s
+
+#4 [internal] load metadata for docker.io/library/node:22-alpine
+#4 ...
+
+#5 [auth] library/node:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:22-alpine
+#4 DONE 4.4s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 161B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 DONE 0.0s
+
+#8 [frontend 1/6] FROM docker.io/library/node:22-alpine@sha256:0e1754758c2df4cfa3e68d59e2e1b7374bb7fd9ea6328eaaacf15cc934af8202
+#8 resolve docker.io/library/node:22-alpine@sha256:0e1754758c2df4cfa3e68d59e2e1b7374bb7fd9ea6328eaaacf15cc934af8202 0.1s done
+#8 DONE 0.1s
+
+#9 [stage-1 1/6] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#9 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.1s done
+#9 DONE 0.1s
+
+#7 [internal] load build context
+#7 transferring context: 25.25kB done
+#7 DONE 0.0s
+
+#10 [frontend 5/6] COPY frontend/ ./
+#10 CACHED
+
+#11 [frontend 2/6] WORKDIR /web
+#11 CACHED
+
+#12 [frontend 4/6] RUN npm ci
+#12 CACHED
+
+#13 [stage-1 5/6] RUN pip install . && useradd --uid 10001 --create-home appuser
+#13 CACHED
+
+#14 [stage-1 2/6] WORKDIR /app
+#14 CACHED
+
+#15 [frontend 3/6] COPY frontend/package*.json ./
+#15 CACHED
+
+#16 [frontend 6/6] RUN npm run build
+#16 CACHED
+
+#17 [stage-1 3/6] COPY backend/ ./
+#17 CACHED
+
+#18 [stage-1 4/6] COPY tools/ /app/tools/
+#18 CACHED
+
+#19 [stage-1 6/6] COPY --from=frontend /web/dist /app/frontend/dist
+#19 CACHED
+
+#20 exporting to image
+#20 exporting layers done
+#20 exporting manifest sha256:864a9cf72f697d4a0fa574108370c3b511bfec5dee3c00d611671ad0672c3d14 done
+#20 exporting config sha256:4d312b2c8b2149e1045ed4c7f5d9607033afb2857803be0d0b80223c1ac0032b done
+#20 exporting attestation manifest sha256:e32f68514c82ad4b08732e28f60642b4a068599250de6d1b710ee64b031c0620
+#20 exporting attestation manifest sha256:e32f68514c82ad4b08732e28f60642b4a068599250de6d1b710ee64b031c0620 0.1s done
+#20 exporting manifest list sha256:7f5c1e7c6c0ce3acf7fa3ca26a604b4bec657782009afab0e49ac95043b69711 0.0s done
+#20 naming to docker.io/library/ais86-flash-test-tests:latest done
+#20 unpacking to docker.io/library/ais86-flash-test-tests:latest
+#20 unpacking to docker.io/library/ais86-flash-test-tests:latest 0.0s done
+#20 DONE 0.2s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image ais86-flash-test-tests Built 
+Attaching to db-1, redis-1, tests-1
+ Container ais86-flash-test-redis-1 Starting 
+ Container ais86-flash-test-db-1 Starting 
+redis-1  | 1:C 11 Nov 2026 17:30:54.212 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1  | 1:C 11 Nov 2026 17:30:54.212 * Redis version=7.4.12, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1  | 1:C 11 Nov 2026 17:30:54.212 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-1  | 1:M 11 Nov 2026 17:30:54.212 * monotonic clock: POSIX clock_gettime
+redis-1  | 1:M 11 Nov 2026 17:30:54.213 * Running mode=standalone, port=6379.
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * Server initialized
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * Loading RDB produced by version 7.4.12
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * RDB age 1732 seconds
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * RDB memory usage when created 0.93 Mb
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * Done loading RDB, keys loaded: 0, keys expired: 0.
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * DB loaded from disk: 0.000 seconds
+redis-1  | 1:M 11 Nov 2026 17:30:54.214 * Ready to accept connections tcp
+ Container ais86-flash-test-redis-1 Started 
+ Container ais86-flash-test-redis-1 Waiting 
+ Container ais86-flash-test-db-1 Started 
+ Container ais86-flash-test-db-1 Waiting 
+db-1     | 
+db-1     | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1     | 
+db-1     | 2026-11-11 17:30:54.426 UTC [1] LOG:  starting PostgreSQL 17.11 on 
+x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1     | 2026-11-11 17:30:54.426 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1     | 2026-11-11 17:30:54.426 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1     | 2026-11-11 17:30:54.437 UTC [1] LOG:  listening on Unix socket 
+"/var/run/postgresql/.s.PGSQL.5432"
+db-1     | 2026-11-11 17:30:54.449 UTC [29] LOG:  database system was shut down at 2026-11-11 
+17:02:02 UTC
+db-1     | 2026-11-11 17:30:54.457 UTC [1] LOG:  database system is ready to accept connections
+ Container ais86-flash-test-redis-1 Healthy 
+ Container ais86-flash-test-db-1 Healthy 
+ Container ais86-flash-test-tests-1 Starting 
+ Container ais86-flash-test-tests-1 Started 
+tests-1  | ============================= test session starts ==============================
+tests-1  | platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0
+tests-1  | rootdir: /app
+tests-1  | configfile: pyproject.toml
+tests-1  | plugins: anyio-4.16.0
+tests-1  | collected 7 items
+tests-1  | 
+tests-1  | tests/test_api_integration.py .......                                    [100%]
+tests-1  | 
+tests-1  | =============================== warnings summary ===============================
+tests-1  | ../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+tests-1  |   /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+tests-1  |     from starlette.testclient import TestClient as TestClient  # noqa
+tests-1  | 
+tests-1  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+tests-1  | ========================= 7 passed, 1 warning in 1.19s =========================
+
+[Ktests-1 exited with code 0
+ Compose Stopping Aborting on container exit...
+ Container ais86-flash-test-tests-1 Stopping 
+ Container ais86-flash-test-tests-1 Stopped 
+ Container ais86-flash-test-redis-1 Stopping 
+ Container ais86-flash-test-db-1 Stopping 
+db-1     | 2026-11-11 17:31:00.401 UTC [1] LOG:  received fast shutdown request
+redis-1  | 1:signal-handler (1794418260) Received SIGTERM scheduling shutdown...
+db-1     | 2026-11-11 17:31:00.407 UTC [1] LOG:  aborting any active transactions
+db-1     | 2026-11-11 17:31:00.409 UTC [1] LOG:  background worker "logical replication launcher" 
+(PID 32) exited with exit code 1
+db-1     | 2026-11-11 17:31:00.409 UTC [27] LOG:  shutting down
+db-1     | 2026-11-11 17:31:00.415 UTC [27] LOG:  checkpoint starting: shutdown immediate
+redis-1  | 1:M 11 Nov 2026 17:31:00.451 * User requested shutdown...
+redis-1  | 1:M 11 Nov 2026 17:31:00.451 * Saving the final RDB snapshot before exiting.
+db-1     | 2026-11-11 17:31:00.454 UTC [47] FATAL:  the database system is shutting down
+redis-1  | 1:M 11 Nov 2026 17:31:00.471 * DB saved on disk
+redis-1  | 1:M 11 Nov 2026 17:31:00.471 # Redis is now ready to exit, bye bye...
+db-1     | 2026-11-11 17:31:00.507 UTC [27] LOG:  checkpoint complete: wrote 24 buffers (0.1%); 0 
+WAL file(s) added, 0 removed, 0 recycled; write=0.012 s, sync=0.058 s, total=0.098 s; sync 
+files=21, longest=0.015 s, average=0.003 s; distance=31 kB, estimate=31 kB; lsn=0/1982920, redo 
+lsn=0/1982920
+db-1     | 2026-11-11 17:31:00.510 UTC [1] LOG:  database system is shut down
+ Container ais86-flash-test-redis-1 Stopped 
+
+[Kredis-1 exited with code 0
+ Container ais86-flash-test-db-1 Stopped 
+
+[Kdb-1 exited with code 0

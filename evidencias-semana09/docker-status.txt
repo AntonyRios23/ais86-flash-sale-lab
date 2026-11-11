@@ -1,0 +1,6 @@
+﻿NAME                   IMAGE                              COMMAND                  SERVICE   CREATED             STATUS                       PORTS
+ais86-flash-api-1      ais86-flash:s09                    "uvicorn app.main:apÔÇª"   api       43 minutes ago      Up 43 minutes (healthy)      127.0.0.1:8019->8000/tcp
+ais86-flash-db-1       postgres:17-alpine                 "docker-entrypoint.sÔÇª"   db        About an hour ago   Up About an hour (healthy)   5432/tcp
+ais86-flash-redis-1    redis:7.4-alpine                   "docker-entrypoint.sÔÇª"   redis     About an hour ago   Up About an hour (healthy)   6379/tcp
+ais86-flash-tunnel-1   cloudflare/cloudflared:2026.10.7   "cloudflared tunnel ÔÇª"   tunnel    12 minutes ago      Up 12 minutes                
+ais86-flash-worker-1   ais86-flash:s09                    "python -m app.worker"   worker    43 minutes ago      Up 43 minutes                8000/tcp
