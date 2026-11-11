@@ -17,3 +17,5 @@ DESIGN.md
 .impeccable/
 .bridge-probe
 *.log
+
+/compose.test.local.yaml
